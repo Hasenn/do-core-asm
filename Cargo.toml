@@ -3,7 +3,7 @@ name = "assembler"
 version = "0.1.0"
 authors = ["Eliott Veyrier <eliott.veyrier@umontpellier.fr>"]
 edition = "2018"
-
+build = "build.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies] 
@@ -13,3 +13,5 @@ lalrpop = "0.19.5" # parser generator
 lalrpop-util = "0.19.5"
 regex = "1"
 structopt = "0.3.21"
+strum = "0.20.0" # enum utils with a derive for FromStr
+strum_macros = "0.20.1"

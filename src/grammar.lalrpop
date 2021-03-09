@@ -50,5 +50,5 @@ OpCode: Op = <s:r"[a-zA-Z]+"> => Op::from_str(&s.to_uppercase()).unwrap();
 // Comments
 //   https://github.com/lalrpop/lalrpop/issues/49
 
-Comment: () = <r";.*\n"> => ();
+Comment: () = <r";.*"> => ();
 

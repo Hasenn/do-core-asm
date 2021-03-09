@@ -1,4 +1,5 @@
 use std::str::FromStr;
+use strum_macros::EnumString;
 
 #[derive(PartialEq, Debug)]
 pub enum Instr {
@@ -28,7 +29,7 @@ pub enum Register {
     RFLAGS
 }
 
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, EnumString)]
 // To avoid this duplication of do-core's code
 // we'll need 
 pub enum Op {
@@ -38,21 +39,6 @@ pub enum Op {
     XOR
 }
 
-impl FromStr for Op {
-    type Err = Error;
-    // the parser calls this with uppercased strings
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        match s {
-            "LD" => Ok(Self::LD),
-            "ST" => Ok(Self::ST),
-            "ADD"=> Ok(Self::ADD),
-            "XOR"=> Ok(Self::XOR),
-            _=> Err(Self::Err::InvalidOp(
-                    String::from_str(s).unwrap()
-                ))
-        }
-    }
-}
 
 #[cfg(test)]
 mod tests {
