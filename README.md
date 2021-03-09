@@ -36,9 +36,18 @@ With exactly two arguments. The first argument is always a register, The second 
 
 ### Comments
 
-A Comment starts with `;` and ends on a newline.
-
-As of now only comments after an instruction are supported but this will change in the future.
+C-style comments :
+```c
+// comment
+/* com
+ment
+*/
+```
+as well as asm style comments
+```asm
+; comment
+```
+are supported
 
 ### Registers
 

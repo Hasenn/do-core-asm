@@ -8,11 +8,22 @@ use crate::instruction::{
 
 grammar;
 
+// macro for a list
+LineSep<T>: Vec<T> = { 
+    <v:(<T> EOL)*> <e:T?> => match e { 
+        None => v,
+        Some(e) => {
+            let mut v = v;
+            v.push(e);
+            v
+        }
+    }
+};
+
 pub File : Vec<Instr> = <Instruction*> => <>;
 
+
 pub Instruction: Instr = {
-    // Ignore comments after an instruction
-    <i:Instruction> Comment => i,
     <op:OpCode> <o0:Register> <o1:Register> => Instr::RegRegOp(op, o0, o1),
     <op:OpCode> <o0:Register> <o1:Num> =>? Err(ParseError::User {
         error: "Instructions with numbers as arguments are not implemented"
@@ -50,5 +61,17 @@ OpCode: Op = <s:r"[a-zA-Z]+"> => Op::from_str(&s.to_uppercase()).unwrap();
 // Comments
 //   https://github.com/lalrpop/lalrpop/issues/49
 
-Comment: () = <r";.*"> => ();
 
+match {
+    
+    r"//[^\n\r]*[\n\r]*" => { }, // Skip `// comments`
+    r";[^\n\r]*[\n\r]*" => { }, // Skip `; comments`
+    r"/\*([^\*]*\*+[^\*/])*([^\*]*\*+|[^\*])*\*/" => { },  // Skip `/* comments */`
+    
+} else {
+    r"\s*" => { }, 
+} else {
+    "\n" => EOL,
+    "$" => EOF,
+    _
+}
