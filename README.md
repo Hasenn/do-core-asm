@@ -44,7 +44,7 @@ As of now only comments after an instructions are supported but this will change
 
 General purpose registers start with an 'r' followed by a number, like `r0` or `R1`
 
-Special registers are `RIP` and `RFLAGS` and **must** be uppercase. thay are not supported as of yet in instructions of the do-core architecture and will most likely only be usable at certain places of certain instructions.
+Special registers are `RIP` and `RFLAGS` and **must** be uppercase. they are not supported as of yet in instructions of the do-core architecture and will most likely only be usable at certain places of certain instructions.
 
 ## Command line
 
