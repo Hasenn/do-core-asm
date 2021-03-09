@@ -20,13 +20,52 @@ fn decimal_nums_parse_correctly() {
     assert_eq!(assembler::NumParser::new().parse("23").unwrap(), 23);
 }
 #[test]
-fn instructions_parse_correctly() {
+fn add_instructions_parse_correctly() {
     let instr = assembler::InstructionParser::new().parse("ADD R0 R1").unwrap();
     assert_eq!(instr, instruction::Instr::RegRegOp(
         instruction::OpCode::ADD,
         instruction::Register::GeneralPurpose(0),
         instruction::Register::GeneralPurpose(1)
-    ))
+    ));
+}
+#[test]
+fn opcodes_allow_free_capitalization() {
+    let instr = assembler::InstructionParser::new().parse("Add R0 R1").unwrap();
+    assert_eq!(instr, instruction::Instr::RegRegOp(
+        instruction::OpCode::ADD,
+        instruction::Register::GeneralPurpose(0),
+        instruction::Register::GeneralPurpose(1)
+    ));
+    let instr = assembler::InstructionParser::new().parse("add R0 R1").unwrap();
+    assert_eq!(instr, instruction::Instr::RegRegOp(
+        instruction::OpCode::ADD,
+        instruction::Register::GeneralPurpose(0),
+        instruction::Register::GeneralPurpose(1)
+    ));
+    let instr = assembler::InstructionParser::new().parse("ADD R0 R1").unwrap();
+    assert_eq!(instr, instruction::Instr::RegRegOp(
+        instruction::OpCode::ADD,
+        instruction::Register::GeneralPurpose(0),
+        instruction::Register::GeneralPurpose(1)
+    ));
+}
+#[test]
+fn xor_instructions_parse_correctly() {
+    let instr = assembler::InstructionParser::new().parse("XOR R0 R1").unwrap();
+    assert_eq!(instr, instruction::Instr::RegRegOp(
+        instruction::OpCode::XOR,
+        instruction::Register::GeneralPurpose(0),
+        instruction::Register::GeneralPurpose(1)
+    ));
+}
+
+#[test]
+fn valid_files_parse_without_error() {
+    assert!(assembler::FileParser::new()
+        .parse("Add r0 r1 ; some comment
+        Ld  r2 r1
+        LD r1 r2
+        ST r2 r1").is_ok());
 }
 
 fn main() {

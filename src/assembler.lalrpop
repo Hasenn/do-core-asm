@@ -33,7 +33,7 @@ pub Num: u16 = {
 
 // Lexer
 
-//  Nums, we can represent anything 
+//  Nums
 HexNum: u16 = <s:r"0x[0-9AaBbCcDdEeFf]{1,4}"> => {
     u16::from_str_radix(s.trim_start_matches("0x"),16).unwrap()
 };
@@ -46,10 +46,9 @@ DecNum: u16 = <s:r"[0-9]+"> => {
 //  Registers
 GPReg: Register = <s:r"[rR][0-9]"> => Register::GeneralPurpose(u8::from_str(&s[1..]).unwrap());
 
-OpCode: OpCode= <s:r"[a-zA-Z]+"> => OpCode::from_str(s).unwrap();
+OpCode: OpCode= <s:r"[a-zA-Z]+"> => OpCode::from_str(&s.to_uppercase()).unwrap();
 // Comments
 //   https://github.com/lalrpop/lalrpop/issues/49
-//   end of line will be replaced by $ in a prepass
-//   this is to avoid having to write a custom lexer
-Comment: () = <r";.*\$"> => ();
+
+Comment: () = <r";.*\n"> => ();
 
