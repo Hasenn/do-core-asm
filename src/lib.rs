@@ -25,28 +25,28 @@ mod tests {
     fn add_instructions_parse_correctly() {
         let instr = assembler::InstructionParser::new().parse("ADD R0 R1").unwrap();
         assert_eq!(instr, instruction::Instr::RegRegOp(
-            instruction::OpCode::ADD,
+            instruction::Op::ADD,
             instruction::Register::GeneralPurpose(0),
             instruction::Register::GeneralPurpose(1)
         ));
     }
     #[test]
-    fn opcodes_allow_free_capitalization() {
+    fn Ops_allow_free_capitalization() {
         let instr = assembler::InstructionParser::new().parse("Add R0 R1").unwrap();
         assert_eq!(instr, instruction::Instr::RegRegOp(
-            instruction::OpCode::ADD,
+            instruction::Op::ADD,
             instruction::Register::GeneralPurpose(0),
             instruction::Register::GeneralPurpose(1)
         ));
         let instr = assembler::InstructionParser::new().parse("add R0 R1").unwrap();
         assert_eq!(instr, instruction::Instr::RegRegOp(
-            instruction::OpCode::ADD,
+            instruction::Op::ADD,
             instruction::Register::GeneralPurpose(0),
             instruction::Register::GeneralPurpose(1)
         ));
         let instr = assembler::InstructionParser::new().parse("ADD R0 R1").unwrap();
         assert_eq!(instr, instruction::Instr::RegRegOp(
-            instruction::OpCode::ADD,
+            instruction::Op::ADD,
             instruction::Register::GeneralPurpose(0),
             instruction::Register::GeneralPurpose(1)
         ));
@@ -55,7 +55,7 @@ mod tests {
     fn xor_instructions_parse_correctly() {
         let instr = assembler::InstructionParser::new().parse("XOR R0 R1").unwrap();
         assert_eq!(instr, instruction::Instr::RegRegOp(
-            instruction::OpCode::XOR,
+            instruction::Op::XOR,
             instruction::Register::GeneralPurpose(0),
             instruction::Register::GeneralPurpose(1)
         ));

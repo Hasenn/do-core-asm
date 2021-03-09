@@ -6,19 +6,19 @@ pub enum Instr {
     /// ```asm
     /// LD R0 R1
     /// ```
-    RegRegOp(OpCode, Register, Register),
+    RegRegOp(Op, Register, Register),
     /// An instruction that uses a register and an unsigned integer
     /// ```asm
     /// LSH R0 8
     /// ```
     /// the integer must be encodable into 4 bits
     /// otherwise this instruction will fail to assemble
-    RegNumOp(OpCode, Register, u8),
+    RegNumOp(Op, Register, u8),
 }
 
 #[derive(Debug)]
 pub enum Error {
-    InvalidOpCode(String)
+    InvalidOp(String)
 }
 
 #[derive(PartialEq, Debug)]
@@ -29,14 +29,16 @@ pub enum Register {
 }
 
 #[derive(PartialEq, Debug)]
-pub enum OpCode {
+// To avoid this duplication of do-core's code
+// we'll need 
+pub enum Op {
     LD,
     ST,
     ADD,
     XOR
 }
 
-impl FromStr for OpCode {
+impl FromStr for Op {
     type Err = Error;
     // the parser calls this with uppercased strings
     fn from_str(s: &str) -> Result<Self, Self::Err> {
@@ -45,7 +47,7 @@ impl FromStr for OpCode {
             "ST" => Ok(Self::ST),
             "ADD"=> Ok(Self::ADD),
             "XOR"=> Ok(Self::XOR),
-            _=> Err(Self::Err::InvalidOpCode(
+            _=> Err(Self::Err::InvalidOp(
                     String::from_str(s).unwrap()
                 ))
         }
@@ -56,10 +58,10 @@ impl FromStr for OpCode {
 mod tests {
     use super::*;
     #[test]
-    fn opcode_from_string_decodes_uppercase() {
-        assert_eq!(OpCode::from_str("LD").unwrap(),  OpCode::LD);
-        assert_eq!(OpCode::from_str("ST").unwrap(),  OpCode::ST);
-        assert_eq!(OpCode::from_str("ADD").unwrap(), OpCode::ADD);
-        assert_eq!(OpCode::from_str("XOR").unwrap(), OpCode::XOR);
+    fn op_from_string_decodes_uppercase() {
+        assert_eq!(Op::from_str("LD").unwrap(),  Op::LD);
+        assert_eq!(Op::from_str("ST").unwrap(),  Op::ST);
+        assert_eq!(Op::from_str("ADD").unwrap(), Op::ADD);
+        assert_eq!(Op::from_str("XOR").unwrap(), Op::XOR);
     }
 }

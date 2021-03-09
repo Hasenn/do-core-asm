@@ -3,7 +3,7 @@ use lalrpop_util::ParseError;
 use crate::instruction::{
     Instr,
     Register,
-    OpCode
+    Op
 };
 
 grammar;
@@ -46,7 +46,7 @@ DecNum: u16 = <s:r"[0-9]+"> => {
 //  Registers
 GPReg: Register = <s:r"[rR][0-9]"> => Register::GeneralPurpose(u8::from_str(&s[1..]).unwrap());
 
-OpCode: OpCode= <s:r"[a-zA-Z]+"> => OpCode::from_str(&s.to_uppercase()).unwrap();
+OpCode: Op = <s:r"[a-zA-Z]+"> => Op::from_str(&s.to_uppercase()).unwrap();
 // Comments
 //   https://github.com/lalrpop/lalrpop/issues/49
 
