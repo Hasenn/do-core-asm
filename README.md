@@ -36,15 +36,15 @@ With exactly two arguments. The first argument is always a register, The second 
 
 ### Comments
 
-A Comment starts with `;` and ends on a newline
+A Comment starts with `;` and ends on a newline.
 
-As of now only comments after an instructions are supported but this will change in the future.
+As of now only comments after an instruction are supported but this will change in the future.
 
 ### Registers
 
 General purpose registers start with an 'r' followed by a number, like `r0` or `R1`
 
-Special registers are `RIP` and `RFLAGS` and **must** be uppercase. they are not supported as of yet in instructions of the do-core architecture and will most likely only be usable at certain places of certain instructions.
+Special registers are `RIP` and `RFLAGS` and **must** be uppercase. they are not supported as of yet in instructions of the do-core architecture and will most likely only be usable at certain places in specific instructions.
 
 ## Command line
 
@@ -62,7 +62,7 @@ For convenience we can also define modes where it outputs a readable stream like
 
 ## API
 
-The lib crate will expose a sensible api to parse do-core-asm into do-core bytecode
+The lib crate will expose a sensible api to parse do-core-asm into do-core bytecode.
 
 
 
