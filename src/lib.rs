@@ -31,7 +31,7 @@ mod tests {
         ));
     }
     #[test]
-    fn Ops_allow_free_capitalization() {
+    fn ops_allow_free_capitalization() {
         let instr = assembler::InstructionParser::new().parse("Add R0 R1").unwrap();
         assert_eq!(instr, instruction::Instr::RegRegOp(
             instruction::Op::ADD,
