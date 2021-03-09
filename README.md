@@ -1,6 +1,6 @@
 # do-core-asm
 
-This is an assembler language that can parse a simple assembly language
+This is an assembler that can parse a simple assembly language
 for the do-core fantasy architecture.
 
 ## The language
