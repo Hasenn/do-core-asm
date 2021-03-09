@@ -16,7 +16,7 @@ xor r1 r2
 XOR R1 RIP ; capitalization is only important for special registers
 add R1 R2  ; like RIP and RFLAGS
 
-INC R1 3   ; this is not supported by do-code yet but might be
+INC R1 3   ; this is not supported by do-core yet but might be
 INC R1 1   ; integer litterals are only valid as second arguments 
 INC R1 0b1010 ; they can be in binary with the 0b prefix
 INC R1 0xF ; or in hex with the 0x prefix
