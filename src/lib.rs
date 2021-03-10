@@ -2,6 +2,7 @@
 #[macro_use] extern crate strum_macros;
 
 pub mod instruction;
+pub mod encode;
 lalrpop_mod!(pub grammar); // synthesized by LALRPOP
 
 #[cfg(test)]

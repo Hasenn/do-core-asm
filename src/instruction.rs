@@ -28,12 +28,12 @@ pub enum Register {
     RIP,
     RFLAGS
 }
-
-#[derive(PartialEq, Debug, EnumString)]
+#[repr(u8)]
+#[derive(PartialEq, Debug, EnumString, Copy, Clone)]
 // To avoid this duplication of do-core's code
 // we'll need 
 pub enum Op {
-    LD,
+    LD = 0x00,
     ST,
     ADD,
     XOR

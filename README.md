@@ -57,15 +57,12 @@ Special registers are `RIP` and `RFLAGS` and **must** be uppercase. they are not
 
 ## Command line
 
-As of now the `assemble` binary does nothing, but here is a specification :
 
-`assemble` will accept paths for in `-f` and out `-o` files
+`assemble` accepts paths for in `-f` and out `-o` files
 
-If no out path is given, it will default to a sensible value or output to stdout (**TO BE SPECIFIED**)
+If no out path is given, it will default to the input path with an `out` extension
 
-If no in path is given, it will read from `stdin` ending on an END OF FILE character (`ctrl-D` in the terminal (IIRC))
-
-The output will be a binary stream of `u16` instructions.
+The output will be a binary file of back to back `u16` instructions. As of now it will be in big-endian order, but this could be parametrized (**TO BE SPECIFIED**)
 
 For convenience we can also define modes where it outputs a readable stream like `0103 0204 0403` instead of a binary stream, possibly with prefixes for clarity `0x0103 0x0204 0x0403`.
 
