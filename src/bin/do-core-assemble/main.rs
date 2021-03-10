@@ -17,6 +17,8 @@ use std::path::{
 use structopt::StructOpt;
 mod args;
 
+// Constants
+
 const INITIAL_ALLOC_SIZE : usize = 16384;
 
 
@@ -28,6 +30,7 @@ fn main() -> Result<(), std::io::Error> {
             output_path
             ),
         None => {
+            // set out path to in path with `out` extension
             let mut output = opt.input.clone();
             output.set_extension("out");
             assemble_file(
@@ -51,11 +54,8 @@ fn assemble_file(input_path : PathBuf, output_path : PathBuf) -> Result<(), std:
     let mut output_writer = BufWriter::new(output_file);
 
     for instruction in instructions {
-        output_writer.write(&instruction.encode().unwrap().to_be_bytes()).expect("Error while encoding");
+        output_writer.write(&instruction.encode().unwrap().to_ne_bytes()).expect("Error while encoding");
     }
-
-    
-
     Ok(())
     
 }
