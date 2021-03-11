@@ -60,9 +60,13 @@ fn assemble_file(input_path : PathBuf, output_path : PathBuf) -> Result<(), std:
 
     for instruction in instructions {
         #[cfg(debug_assertions)]
-        println!("{:?}", &instruction.encode().unwrap().to_ne_bytes());
+        print!("{:#06x} ", &instruction.encode().unwrap());
         output_writer.write(&instruction.encode().unwrap().to_ne_bytes()).expect("Error while encoding");
     }
+    
+    #[cfg(debug_assertions)]
+    print!("\n");
+
     Ok(())
     
 }

@@ -67,8 +67,6 @@ match {
     r"//[^\n\r]*[\n\r]*" => { }, // Skip `// comments`
     r";[^\n\r]*[\n\r]*" => { }, // Skip `; comments`
     
-} else {
-    
-} else {
+}  else {
     _
 }

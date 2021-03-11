@@ -50,7 +50,7 @@ impl Encodable for Instr {
                 r1.to_byte()?
             ),
             Instr::RegNumOp(_,_,_) => Err(Error::NumArgumentError)
-            
+
         }
     }
 }
