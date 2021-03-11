@@ -1,5 +1,6 @@
 extern crate assembler;
 #[macro_use] extern crate structopt;
+
 use assembler::grammar::FileParser;
 use assembler::instruction;
 use assembler::encode::Encodable;
@@ -24,6 +25,10 @@ const INITIAL_ALLOC_SIZE : usize = 16384;
 
 fn main() -> Result<(), std::io::Error> {
     let opt = args::Opt::from_args();
+    run(opt)
+}
+
+pub fn run(opt: args::Opt) -> Result<(), std::io::Error>{
     match opt.output {
         Some(output_path) => assemble_file(
             opt.input,
