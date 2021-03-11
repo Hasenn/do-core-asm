@@ -1,12 +1,22 @@
 LD R0 R1
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+
 
 LD R1 R0
 ADD R1 R1
+
+//
 ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
 
 
 

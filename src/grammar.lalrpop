@@ -10,7 +10,7 @@ grammar;
 
 // macro for a list
 LineSep<T>: Vec<T> = { 
-    <v:(<T> EOL)*> <e:T?> => match e { 
+    <v:(<T>)*> <e:T?> => match e { 
         None => v,
         Some(e) => {
             let mut v = v;
@@ -63,15 +63,12 @@ OpCode: Op = <s:r"[a-zA-Z]+"> => Op::from_str(&s.to_uppercase()).unwrap();
 
 
 match {
-    
+    r"\s*" => { }, 
     r"//[^\n\r]*[\n\r]*" => { }, // Skip `// comments`
     r";[^\n\r]*[\n\r]*" => { }, // Skip `; comments`
-    r"/\*([^\*]*\*+[^\*/])*([^\*]*\*+|[^\*])*\*/" => { },  // Skip `/* comments */`
     
 } else {
-    r"\s*" => { }, 
+    
 } else {
-    "\n" => EOL,
-    "$" => EOF,
     _
 }

@@ -59,6 +59,8 @@ fn assemble_file(input_path : PathBuf, output_path : PathBuf) -> Result<(), std:
     let mut output_writer = BufWriter::new(output_file);
 
     for instruction in instructions {
+        #[cfg(debug_assertions)]
+        println!("{:?}", &instruction.encode().unwrap().to_ne_bytes());
         output_writer.write(&instruction.encode().unwrap().to_ne_bytes()).expect("Error while encoding");
     }
     Ok(())
@@ -88,12 +90,9 @@ mod tests {
 
 
                 Ld r0 r1 ; comments
-                // c style comments
+                // c style line comments
         
                 Ld r0 r1 ; comments
-                /* moar
-                c style
-                comments */
                 
                 "),
                 Ok(vec![

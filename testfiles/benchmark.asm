@@ -1,396 +1,308 @@
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R0 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R1 R0
+ADD R1 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R3
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R7
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R0 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R1 R0
+ADD R1 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R3
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R7
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R0 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R1 R0
+ADD R1 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R3
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+ADD R1 R7
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R0 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
-/*
-This is a test file
-To be compiled by do-core-assemble
-*/
+LD R1 R0
+ADD R1 R1
 
-lD    R1 R0 // comment
-AdD R1     R1
-ADd R1 R1LD R0 R1 ; comments 
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+
+LD R0 R1
+
+
+LD R1 R0
+ADD R1 R1
+
+//
+ADD R1 R1
+ADD R1 R2 ; stuff
+
+ADD R1 R3
+
+ADD R1 R4
+ADD R1 R5
+ADD R1 R6
+
+
+ADD R1 R7
+
+
+
+

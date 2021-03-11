@@ -57,12 +57,9 @@ With exactly two arguments. The first argument is always a register, The second 
 
 ### Comments
 
-C-style comments :
+C-style line comments :
 ```c
 // comment
-/* com
-ment
-*/
 ```
 as well as asm style comments
 ```asm
