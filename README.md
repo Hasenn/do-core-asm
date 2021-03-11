@@ -3,6 +3,27 @@
 This is an assembler that can parse a simple assembly language
 for the do-core fantasy architecture.
 
+## Installation
+
+```sh
+git clone https://github.com/Hasenn/do-core-asm.git
+cargo install --path do-core-asm
+# remove the repo if you need to
+rm -rf do-core-asm
+```
+You can then use the binary `do-core-assemble`
+```sh
+do-core-assemble -i myfile.asm
+```
+To see the result you can use the `od -x` command
+```
+do-core-assemble -i example.asm && od -x example.out
+```
+
+As we use `main` as our git main branch, and cargo install expects `master` untill [this pull request](https://github.com/rust-lang/cargo/pull/9133) becomes part of a rust-lang release, we can't use `cargo install --git`.
+
+
+
 ## The language
 
 As it is easier to explain by example, here is an example of valid do-core-asm code :
