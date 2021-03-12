@@ -88,6 +88,17 @@ For convenience we can also define modes where it outputs a readable stream like
 
 The lib crate will expose a sensible api to parse do-core-asm into do-core bytecode.
 
+The api is unstable for now as running the parser can panic.
+
+```rust
+// parses a string into a list of Instructions
+instructions = assemble::grammar::FileParser.new().parse("(..)")
+
+for ins in instructions {
+    println!(&ins.encode.unwrap())
+}
+```
+
 
 
 
