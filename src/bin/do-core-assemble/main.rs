@@ -1,13 +1,11 @@
 extern crate assembler;
-#[macro_use] extern crate structopt;
+extern crate structopt;
 
 use assembler::grammar::FileParser;
-use assembler::instruction;
 use assembler::encode::Encodable;
 use assembler::instruction::Instr;
 
 use std::fs::File;
-use std::io::prelude::*;
 use std::io::Read;
 use std::io::{BufWriter, Write};
 
@@ -47,23 +45,31 @@ pub fn run(opt: args::Opt) -> Result<(), std::io::Error>{
 }
 
 
-fn assemble_file(input_path : PathBuf, output_path : PathBuf) -> Result<(), std::io::Error> {
+pub fn assemble_file(input_path : PathBuf, output_path : PathBuf) -> Result<(), std::io::Error> {
+    // Read entire input file into a string
     let mut input_file = File::open(input_path)?;
-
     let mut input_string = String::with_capacity(INITIAL_ALLOC_SIZE);
     input_file.read_to_string(&mut input_string)?;
 
-    let instructions : Vec<Instr> = FileParser::new().parse(&input_string).expect("Error while parsing file");
+    // Parse input into a list of instructions
+    let instructions : Vec<Instr> = FileParser::new().parse(&input_string)
+        .expect("Error while parsing file");
 
-    let output_file = File::create(output_path).expect("couldn't create output file");
+    // open output file for buffered write
+    let output_file = File::create(output_path)
+        .expect("couldn't create output file");
     let mut output_writer = BufWriter::new(output_file);
 
+    // encode and write all instructions to output
     for instruction in instructions {
         #[cfg(debug_assertions)]
         print!("{:#06x} ", &instruction.encode().unwrap());
-        output_writer.write(&instruction.encode().unwrap().to_ne_bytes()).expect("Error while encoding");
+
+        output_writer.write(
+            &instruction.encode().unwrap().to_ne_bytes()
+        ).expect("Error while encoding");
     }
-    
+
     #[cfg(debug_assertions)]
     print!("\n");
 
@@ -74,9 +80,17 @@ fn assemble_file(input_path : PathBuf, output_path : PathBuf) -> Result<(), std:
 
 
 
-
+#[cfg(test)]
+#[allow(unused_imports)]
 mod tests {
     use super::*;
+    use assembler::instruction::{
+        Instr,
+        Op::*,
+        Register,
+
+
+    };
     
     #[test]
     fn comments_are_ignored() {
@@ -100,12 +114,12 @@ mod tests {
                 
                 "),
                 Ok(vec![
-                    assembler::instruction::Instr::RegRegOp(assembler::instruction::Op::LD, assembler::instruction::Register::GeneralPurpose(0), assembler::instruction::Register::GeneralPurpose(1)),
-                    assembler::instruction::Instr::RegRegOp(assembler::instruction::Op::ST, assembler::instruction::Register::GeneralPurpose(0), assembler::instruction::Register::GeneralPurpose(1)),
-                    assembler::instruction::Instr::RegRegOp(assembler::instruction::Op::LD, assembler::instruction::Register::GeneralPurpose(0), assembler::instruction::Register::GeneralPurpose(1)),
-                    assembler::instruction::Instr::RegRegOp(assembler::instruction::Op::LD, assembler::instruction::Register::GeneralPurpose(0), assembler::instruction::Register::GeneralPurpose(1)),
-                    assembler::instruction::Instr::RegRegOp(assembler::instruction::Op::LD, assembler::instruction::Register::GeneralPurpose(0), assembler::instruction::Register::GeneralPurpose(1)),
-                    assembler::instruction::Instr::RegRegOp(assembler::instruction::Op::LD, assembler::instruction::Register::GeneralPurpose(0), assembler::instruction::Register::GeneralPurpose(1))
+                    Instr::RegRegOp(LD, Register::GeneralPurpose(0), Register::GeneralPurpose(1)),
+                    Instr::RegRegOp(ST, Register::GeneralPurpose(0), Register::GeneralPurpose(1)),
+                    Instr::RegRegOp(LD, Register::GeneralPurpose(0), Register::GeneralPurpose(1)),
+                    Instr::RegRegOp(LD, Register::GeneralPurpose(0), Register::GeneralPurpose(1)),
+                    Instr::RegRegOp(LD, Register::GeneralPurpose(0), Register::GeneralPurpose(1)),
+                    Instr::RegRegOp(LD, Register::GeneralPurpose(0), Register::GeneralPurpose(1))
                     ])
         )
     }
