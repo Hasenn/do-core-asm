@@ -8,18 +8,6 @@ use crate::instruction::{
 
 grammar;
 
-// macro for a list
-LineSep<T>: Vec<T> = { 
-    <v:(<T>)*> <e:T?> => match e { 
-        None => v,
-        Some(e) => {
-            let mut v = v;
-            v.push(e);
-            v
-        }
-    }
-};
-
 pub File : Vec<Instr> = <Instruction*> => <>;
 
 

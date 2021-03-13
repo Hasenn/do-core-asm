@@ -95,7 +95,7 @@ The api is unstable for now as running the parser can panic.
 instructions = assemble::grammar::FileParser.new().parse("(..)")
 
 for ins in instructions {
-    println!(&ins.encode.unwrap())
+    println!("encoded {:?} to {:#06x}", &ins, &ins.encode().unwrap())
 }
 ```
 

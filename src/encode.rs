@@ -12,7 +12,7 @@ pub enum Error {
     SpecialRegisterError,
     NumArgumentError
 }
-
+/// A trait for types that can be converted to a single byte
 trait ToByte {
     type Err : Debug;
     fn to_byte(&self) -> Result<u8, Self::Err>;
@@ -34,7 +34,8 @@ impl ToByte for Op {
         Ok(*self as u8)
     }
 }
-
+/// A trait for types that can be encoded into a `u16`,
+/// Which is the size of our architecture's registers
 pub trait Encodable {
     type Err : Debug;
     fn encode(&self) -> Result<u16, Self::Err>;
@@ -55,6 +56,17 @@ impl Encodable for Instr {
     }
 }
 
+/// joins an `u8` and two half bytes into an `u16`
+/// 
+/// fails if one of the half bytes passed as `u8`s is 
+/// too big to be represented on 4 bits
+/// 
+/// ```rust
+/// assert_eq!(
+///     join(0x12,0x3,0x4).unwrap(),
+///     0x1234
+/// )
+/// ```
 fn join(a: u8, upper_b: u8, lower_b : u8) -> Result<u16, Error> {
     if upper_b > 0xF {
         return Err(Error::ArgOutOfBounds("First operand out of bounds".to_owned()))
