@@ -32,7 +32,7 @@ As it is easier to explain by example, here is an example of valid do-core-asm c
 
 Ld r0 r1 ; comments :-)
 
-add r0 r1
+add r0 r1 // C style line comments
 xor r1 r2
 XOR R1 RIP ; capitalization is only important for special registers
 add R1 R2  ; like RIP and RFLAGS
